@@ -98,15 +98,18 @@ def main():
     ]
 
     print("\nPredictions:")
+    print("-" * 40)
     for i, case in enumerate(test_cases, start=1):
         prediction, scores = predict_naive_bayes(case, priors, likelihoods, labels)
         print(f"Test Case {i}")
+        print("-" * 20)
         print(f"Symptoms: {case}")
         print(f"Predicted Condition: {prediction}")
         print("Log Scores:")
         for label, score in scores.items():
             print(f"  {label}: {score:.3f}")
-        print("-" * 30)
+        print("-" * 20)
+        print ("\n")
 
 
 if __name__ == "__main__":    
