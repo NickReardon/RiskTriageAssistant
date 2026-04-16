@@ -34,9 +34,7 @@ def train_naive_bayes(training_data, feature_names, label_names):
 
             # Calculate probability with Laplace smoothing (add 1 smoothing)
             for value in values:
-                likelihoods[feature][label][value] = (
-                    value_counts[value] + 1
-                ) / (subset_count + len(values))
+                likelihoods[feature][label][value] = ( value_counts[value] + 1 ) / (subset_count + len(values))
                 
     return priors, likelihoods, labels, possible_feature_values
 
